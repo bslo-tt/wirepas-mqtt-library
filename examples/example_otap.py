@@ -156,7 +156,7 @@ if __name__ == "__main__":
 
     logging.info(f"Sequences already in use: {current_target_seq_set}")
     # Take a sequence from 1-254 that is not in the current set
-    seq = choice([i for i in range(1,254) if i not in current_target_seq_set])
+    seq = max(current_target_seq_set) % 255 + 1
 
     logging.info("Sequence chosen: %d " % seq)
 
